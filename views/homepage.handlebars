@@ -1,0 +1,23 @@
+<ol class="post-list">
+  {{#each posts as |post|}}
+  <li>
+    {{> post-info post }}
+  </li>
+  {{/each}}
+</ol>
+{{#if loggedIn}}
+    <form class="comment-form">
+      <div>
+        <textarea id="comment" name="comment-body"></textarea>
+      </div>
+
+      <div>
+        <button class=" btn btn-success" type="submit">add comment</button>
+      
+      </div>
+    </form>
+    {{/if}}
+    {{> comments post.comments}}
+  {{#if loggedIn}}
+  <script src="/javascript/comment.js"></script>
+  {{/if}}

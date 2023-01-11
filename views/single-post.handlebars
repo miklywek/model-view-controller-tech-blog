@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="card-header">
+    {{post.title}}
+  </div>
+  <div class="card-header font-monospace">
+    Posted by
+    {{post.user.username}}
+    on
+    {{post.created_at}}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Ex consequuntur, illo, beatae similique dicta asperiores deleniti
+      esse fuga accusantium voluptatibus animi adipisci praesentium odio tempore
+      accusamus. Minus praesentium omnis consectetur.</h5>
+      {{#if loggedIn}}
+    <form class="comment-form">
+      <div>
+        <textarea name="comment-body"></textarea>
+      </div>
+
+      <div>
+        <button class=" btn btn-success" type="submit">add comment</button>
+      
+      </div>
+    </form>
+    {{/if}}
+  {{#if loggedIn}}
+  <script src="/javascript/comment.js"></script>
+  {{/if}}
